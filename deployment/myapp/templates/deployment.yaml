@@ -36,18 +36,15 @@ spec:
               protocol: TCP
           env:
             - name: DB_USER
-              value: "postgres"  # Using the default PostgreSQL user
+              value: "datahack_user"  
             - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "postgresql.fullname" . }}  # References the PostgreSQL Secret
-                  key: postgres-password  # Default key for the 'postgres' user's password
+              value: "dasjhfoa3" 
             - name: DB_HOST
-              value: "{{ include "postgresql.fullname" . }}"  # PostgreSQL service name
+              value: "postgres" 
             - name: DB_PORT
-              value: "5432"  # Default PostgreSQL port
+              value: "5432"  
             - name: DB_NAME
-              value: "postgres"  # Default database name
+              value: "dh_database" 
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}

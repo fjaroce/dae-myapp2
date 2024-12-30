@@ -97,3 +97,9 @@ tolerations: []
 
 affinity: {}
 
+postgresql:
+  enabled: true
+  username: "datahack_user"
+  password: "dasjhfoa3"
+  database: "dh_database"
+  volumeSize: "1Gi" 
